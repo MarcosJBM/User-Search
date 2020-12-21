@@ -1,14 +1,16 @@
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 
-import SearchUsers from './Pages/SearchUsers';
-import UserInformations from './Pages/UserInformations';
+const SearchingUser = lazy(() => import("./Pages/SearchingUser"));
+const UserInformations = lazy(() => import("./Pages/UserInformations"));
 
 const Routes = () => {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={SearchUsers} />
-      <Route path="/user-informations" component={UserInformations} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route exact path='/' component={SearchingUser} />
+        <Route path='/user-informations' component={UserInformations} />
+      </Suspense>
     </BrowserRouter>
   );
 };
