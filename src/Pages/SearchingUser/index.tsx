@@ -1,12 +1,16 @@
 import React, { SyntheticEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const SearchingUser = () => {
   const [userName, setUserName] = useState<string>("");
 
+  const history = useHistory();
+
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
-    alert(`Welcome: ${userName}`);
+
+    localStorage.setItem("userName", userName);
+    history.push("/user-informations");
   }
 
   return (
