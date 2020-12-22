@@ -1,5 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+import "../../Styles/Pages/SearchingUser/styles.css";
 
 const SearchingUser = () => {
   const [userName, setUserName] = useState<string>("");
@@ -18,17 +20,19 @@ const SearchingUser = () => {
       <header>
         <h1>Search for a User</h1>
       </header>
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <input
-            type='text'
-            value={userName}
-            onChange={event => setUserName(event.target.value)}
-          />
-        </fieldset>
-        <button type='submit'>Pesquisar</button>
-      </form>
-      <Link to='user-informations'>Go to informations of the user.</Link>
+
+      <main>
+        <form onSubmit={handleSubmit}>
+          <fieldset>
+            <input
+              type='text'
+              value={userName}
+              onChange={event => setUserName(event.target.value)}
+            />
+          </fieldset>
+          <button type='submit'>Pesquisar</button>
+        </form>
+      </main>
     </div>
   );
 };
