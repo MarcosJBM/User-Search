@@ -8,3 +8,11 @@ export interface UserProps {
   following: number;
   location: string;
 }
+
+export interface RepositoriesProps {
+  id: number;
+  name: string;
+  description: string;
+  language: string;
+  html_url: string;
+}
