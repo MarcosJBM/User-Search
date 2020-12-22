@@ -10,9 +10,8 @@ export interface UserProps {
 }
 
 export interface RepositoriesProps {
-  id: number;
+  html_url: string;
   name: string;
   description: string;
   language: string;
-  html_url: string;
 }

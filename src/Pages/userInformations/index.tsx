@@ -5,6 +5,7 @@ import api from "../../Services/api";
 import { UserProps, RepositoriesProps } from "./types";
 
 import "../../Styles/Pages/UserInformations/styles.css";
+import { Repository } from "../../Components/Repository";
 
 const UserInformations = () => {
   const [user, setUser] = useState<UserProps | null>(null);
@@ -44,7 +45,14 @@ const UserInformations = () => {
         <p>{user?.location}</p>
       </div>
       <div id='user-repositories'>
-        <h1>User Repositories</h1>
+        {repositories.map(repo => (
+          <Repository
+            html_url={repo.html_url}
+            name={repo.name}
+            description={repo.description}
+            language={repo.language}
+          />
+        ))}
       </div>
     </div>
   );
