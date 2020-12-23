@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-import api from "../../Services/api";
+import { Repository } from "../../Components/Repository";
 
 import { UserProps, RepositoriesProps } from "./types";
 
+import api from "../../Services/api";
+
 import "../../Styles/Pages/UserInformations/styles.css";
-import { Repository } from "../../Components/Repository";
+import {
+  LinkIcon,
+  LocationIcon,
+  OrganizationIcon,
+  PeopleIcon,
+} from "@primer/octicons-react";
 
 const UserInformations = () => {
   const [user, setUser] = useState<UserProps | null>(null);
@@ -28,20 +35,32 @@ const UserInformations = () => {
   return (
     <div id='user-informations-page'>
       <div id='user-informations'>
-        <a href={user?.html_url}>
-          <img src={user?.avatar_url} alt={user?.name} />
-        </a>
+        <img src={user?.avatar_url} alt={user?.name} />
 
         <h2>{user?.name}</h2>
         <h4>{user?.login}</h4>
 
         <p>{user?.bio}</p>
         <div id='following-and-followers'>
-          <p>{user?.followers} followers</p>
+          <p>
+            <PeopleIcon size={16} className='icon' />
+            {user?.followers} followers
+          </p>
 
           <p>{user?.following} following</p>
         </div>
-        <p>{user?.location}</p>
+        <p>
+          <LocationIcon size={16} className='icon' />
+          {user?.location}
+        </p>
+        <p>
+          <OrganizationIcon size={16} className='icon' />
+          {user?.company}
+        </p>
+        <p>
+          <LinkIcon size={16} className='icon' />
+          {user?.blog}
+        </p>
       </div>
       <div id='user-repositories'>
         {repositories.map(repo => (

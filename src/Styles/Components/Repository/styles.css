@@ -1,18 +1,24 @@
 #repository {
   width: 444px;
 
-  padding: 16px 16px 16px 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+
+  border: 1px rgb(235, 232, 232) solid;
+  border-radius: 6px;
 }
 
 #repository a {
+  text-decoration: 0;
+}
+
+#repository span {
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
   text-align: left;
 
   color: rgb(3, 102, 214);
-
-  text-decoration: 0;
 }
 
 #repository #description {
@@ -47,6 +53,15 @@
   text-align: left;
 
   margin-left: 40px;
+
+  color: rgb(88, 96, 105);
+}
+
+.icon {
+  line-height: 21px;
+  margin-right: 8px;
+
+  text-align: left;
 
   color: rgb(88, 96, 105);
 }

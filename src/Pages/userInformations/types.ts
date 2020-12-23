@@ -7,6 +7,8 @@ export interface UserProps {
   followers: number;
   following: number;
   location: string;
+  company: string;
+  blog: string;
 }
 
 export interface RepositoriesProps {

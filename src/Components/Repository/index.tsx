@@ -4,6 +4,8 @@ import { RepositoriesProps } from "./types";
 
 import "../../Styles/Components/Repository/styles.css";
 
+import { RepoIcon } from "@primer/octicons-react";
+
 export const Repository = (props: RepositoriesProps) => {
   const hasStars =
     props.stargazers_count > 0 ? (
@@ -15,7 +17,10 @@ export const Repository = (props: RepositoriesProps) => {
   return (
     <div id='repository'>
       <a href={props.html_url}>
-        <span>{props.name}</span>
+        <span>
+          <RepoIcon size={16} className='icon' />
+          {props.name}
+        </span>
       </a>
       <p id='description'>{props.description}</p>
       <div id='language-and-stars'>
