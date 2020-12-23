@@ -1,0 +1,52 @@
+#repository {
+  width: 444px;
+
+  padding: 16px 16px 16px 16px;
+}
+
+#repository a {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: left;
+
+  color: rgb(3, 102, 214);
+
+  text-decoration: 0;
+}
+
+#repository #description {
+  font-size: 12px;
+  height: 36px;
+  line-height: 18px;
+  text-align: left;
+
+  margin-top: 8px;
+  margin-bottom: 16px;
+
+  color: rgb(88, 96, 105);
+}
+
+#language-and-stars {
+  display: flex;
+}
+
+#language-and-stars #language {
+  font-size: 12px;
+
+  line-height: 18px;
+  text-align: left;
+
+  color: rgb(88, 96, 105);
+}
+
+#language-and-stars #stars {
+  font-size: 12px;
+
+  line-height: 18px;
+  text-align: left;
+
+  margin-left: 40px;
+
+  color: rgb(88, 96, 105);
+}

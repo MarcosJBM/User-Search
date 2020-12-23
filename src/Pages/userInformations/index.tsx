@@ -21,7 +21,6 @@ const UserInformations = () => {
 
       api.get(`${userName}/repos`).then(response => {
         setRepositories(response.data);
-        console.log(response.data);
       });
     }
   }, []);
@@ -47,6 +46,8 @@ const UserInformations = () => {
       <div id='user-repositories'>
         {repositories.map(repo => (
           <Repository
+            key={repo.html_url.toString()}
+            stargazers_count={repo.stargazers_count}
             html_url={repo.html_url}
             name={repo.name}
             description={repo.description}
