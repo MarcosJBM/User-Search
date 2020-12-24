@@ -1,8 +1,6 @@
 import React, { SyntheticEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import "../../Styles/Pages/SearchingUser/styles.css";
-
 const SearchingUser = () => {
   const [userName, setUserName] = useState<string>("");
 

@@ -40,7 +40,7 @@ export const Repository = (props: RepositoriesProps) => {
         </span>
       </a>
       <p id='description'>{props.description}</p>
-      <div id='language-and-stars'>
+      <div id='language-and-more'>
         <p id='language'>{props.language}</p>
         <RepositoryHasStars />
         <RepositoryHasForks />

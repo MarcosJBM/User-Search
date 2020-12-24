@@ -73,21 +73,27 @@ const UserInformations = () => {
     <div id='user-informations-page'>
       <div id='user-informations'>
         <img src={user?.avatar_url} alt={user?.name} />
-
         <h2>{user?.name}</h2>
         <h4>{user?.login}</h4>
-
         <p>{user?.bio}</p>
+
+        <a href={user?.html_url}>Visitar Perfil</a>
+
         <div id='following-and-followers'>
           <p>
             <PeopleIcon size={16} className='icon' />
-            {user?.followers} followers
+            <span>{user?.followers}</span>
+            followers
           </p>
-          <p>{user?.following} following</p>
+          <p>
+            <span>{user?.following}</span> following
+          </p>
         </div>
-        <HasLocation />
-        <HasCompany />
-        <HasBlog />
+        <div id='has-something'>
+          <HasLocation />
+          <HasCompany />
+          <HasBlog />
+        </div>
       </div>
       <div id='user-repositories'>
         {repositories.map(repo => (

@@ -28,49 +28,53 @@
   text-align: left;
 
   margin-top: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 
   color: rgb(88, 96, 105);
 }
 
-#language-and-stars {
+#language-and-more {
   display: flex;
+  align-items: center;
 }
 
-#language-and-stars #language {
+#language-and-more #language {
   font-size: 12px;
 
+  margin-right: 16px;
   line-height: 18px;
   text-align: left;
 
   color: rgb(88, 96, 105);
 }
 
-#language-and-stars #stars {
-  font-size: 12px;
+#language-and-more #stars {
+  line-height: 18px;
+  text-align: left;
+  margin-right: 16px;
 
-  line-height: 16px;
+  color: rgb(88, 96, 105);
+}
+
+#language-and-more #forks {
+  line-height: 18px;
   text-align: left;
 
   color: rgb(88, 96, 105);
 }
 
-#language-and-stars span {
+#language-and-more span {
   line-height: 21px;
-
-  text-align: left;
-
-  margin-left: 4px;
+  margin-left: -4px;
 
   color: rgb(88, 96, 105);
 }
 
 .icon-repository {
   line-height: 21px;
+  margin-right: 8px;
 
   text-align: left;
-
-  margin-left: 18px;
 
   color: rgb(88, 96, 105);
 }
