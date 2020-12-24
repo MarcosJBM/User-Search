@@ -49,19 +49,28 @@
 #language-and-stars #stars {
   font-size: 12px;
 
-  line-height: 18px;
+  line-height: 16px;
   text-align: left;
-
-  margin-left: 40px;
 
   color: rgb(88, 96, 105);
 }
 
-.icon {
+#language-and-stars span {
   line-height: 21px;
-  margin-right: 8px;
 
   text-align: left;
+
+  margin-left: 4px;
+
+  color: rgb(88, 96, 105);
+}
+
+.icon-repository {
+  line-height: 21px;
+
+  text-align: left;
+
+  margin-left: 18px;
 
   color: rgb(88, 96, 105);
 }

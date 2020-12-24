@@ -10,11 +10,3 @@ export interface UserProps {
   company: string;
   blog: string;
 }
-
-export interface RepositoriesProps {
-  html_url: string;
-  name: string;
-  description: string;
-  language: string;
-  stargazers_count: number;
-}
