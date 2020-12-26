@@ -53,7 +53,7 @@
   color: rgb(36, 41, 46);
 }
 
-#user-informations a {
+#user-informations #user-github {
   width: 280px;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -63,7 +63,6 @@
 
   padding: 5px 16px 5px 16px;
 
-  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
 
@@ -75,7 +74,7 @@
   transition: 0.2s;
 }
 
-#user-informations a:hover {
+#user-informations #user-github:hover {
   background-color: rgb(228, 230, 231);
 }
 
@@ -99,16 +98,20 @@
   line-height: 21px;
 }
 
-#has-something {
+#user-details {
   margin-top: 20px;
 }
 
-#has-something p {
-  color: rgb(36, 41, 46);
+#user-details .detail {
   font-size: 14px;
-  line-height: 21px;
   text-align: left;
+  line-height: 21px;
+
+  list-style-type: none;
+
   padding-top: 4px;
+
+  color: rgb(36, 41, 46);
 }
 
 #user-repositories {
@@ -127,10 +130,14 @@
 }
 
 .icon {
+  text-align: center;
   line-height: 21px;
+
+  margin-top: 3px;
   margin-right: 8px;
 
   text-align: left;
 
-  color: rgb(88, 96, 105);
+  color: rgb(106, 115, 125);
+  float: left;
 }

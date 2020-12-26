@@ -15,6 +15,8 @@ import {
   PeopleIcon,
 } from "@primer/octicons-react";
 
+import { SiTwitter } from "react-icons/si";
+
 const UserInformations = () => {
   const [user, setUser] = useState<UserProps | null>(null);
   const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
@@ -33,13 +35,25 @@ const UserInformations = () => {
     }
   }, []);
 
+  const HasLocation = () => {
+    const userHasLocation =
+      user?.location !== null ? (
+        <li className='detail'>
+          <LocationIcon size={16} className='icon' />
+          <span>{user?.location}</span>
+        </li>
+      ) : null;
+
+    return userHasLocation;
+  };
+
   const HasCompany = () => {
     const userHasCompany =
       user?.company !== null ? (
-        <p>
+        <li className='detail'>
           <OrganizationIcon size={16} className='icon' />
-          {user?.company}
-        </p>
+          <span>{user?.company}</span>
+        </li>
       ) : null;
 
     return userHasCompany;
@@ -48,25 +62,27 @@ const UserInformations = () => {
   const HasBlog = () => {
     const userHasBlog =
       user?.blog !== "" ? (
-        <p>
+        <li className='detail'>
           <LinkIcon size={16} className='icon' />
-          {user?.blog}
-        </p>
+          <a href={user?.blog}>{user?.blog}</a>
+        </li>
       ) : null;
 
     return userHasBlog;
   };
 
-  const HasLocation = () => {
-    const userHasLocation =
-      user?.location !== null ? (
-        <p>
-          <LocationIcon size={16} className='icon' />
-          {user?.location}
-        </p>
+  const HasTwitter = () => {
+    const userHasTwitter =
+      user?.twitter_username !== null ? (
+        <li className='detail'>
+          <SiTwitter size={16} className='icon' />
+          <a href={`https://twitter.com/${user?.twitter_username}`}>
+            @{user?.twitter_username}
+          </a>
+        </li>
       ) : null;
 
-    return userHasLocation;
+    return userHasTwitter;
   };
 
   return (
@@ -77,7 +93,9 @@ const UserInformations = () => {
         <h4>{user?.login}</h4>
         <p>{user?.bio}</p>
 
-        <a href={user?.html_url}>Visitar Perfil</a>
+        <a id='user-github' href={user?.html_url}>
+          Visitar Perfil
+        </a>
 
         <div id='following-and-followers'>
           <p>
@@ -89,10 +107,13 @@ const UserInformations = () => {
             <span>{user?.following}</span> following
           </p>
         </div>
-        <div id='has-something'>
-          <HasLocation />
-          <HasCompany />
-          <HasBlog />
+        <div id='user-details'>
+          <ul>
+            <HasLocation />
+            <HasCompany />
+            <HasBlog />
+            <HasTwitter />
+          </ul>
         </div>
       </div>
       <div id='user-repositories'>
