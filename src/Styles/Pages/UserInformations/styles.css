@@ -114,6 +114,11 @@
   color: rgb(36, 41, 46);
 }
 
+#user-details .detail a:hover {
+  color: rgb(3, 102, 214);
+  text-decoration: underline;
+}
+
 #user-repositories {
   margin-top: 120px;
 

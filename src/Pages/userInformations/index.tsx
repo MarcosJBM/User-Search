@@ -16,6 +16,7 @@ import {
 } from "@primer/octicons-react";
 
 import { SiTwitter } from "react-icons/si";
+import { Spinner } from "../../Components/Spinner";
 
 const UserInformations = () => {
   const [user, setUser] = useState<UserProps | null>(null);
@@ -23,7 +24,6 @@ const UserInformations = () => {
 
   useEffect(() => {
     const userName = localStorage.getItem("userName"); //Pega o nome do usuário
-
     if (userName !== null) {
       api.get(`${userName}`).then(response => {
         setUser(response.data);
