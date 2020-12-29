@@ -1,7 +1,11 @@
-import React, { SyntheticEvent, useState } from "react";
+import React, { createRef, SyntheticEvent, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import "../../Styles/Pages/SearchingUser/styles.css";
+
 const SearchingUser = () => {
+  const inputRef = createRef<HTMLInputElement>();
+
   const [userName, setUserName] = useState<string>("");
 
   const history = useHistory();
@@ -13,12 +17,12 @@ const SearchingUser = () => {
     history.push("/user-informations");
   }
 
+  useEffect(() => {
+    inputRef.current?.focus();
+  });
+
   return (
     <div id='searching-user-page'>
-      <header>
-        <h1>Search for a User</h1>
-      </header>
-
       <main>
         <form onSubmit={handleSubmit}>
           <fieldset>
@@ -26,6 +30,8 @@ const SearchingUser = () => {
               type='text'
               value={userName}
               onChange={event => setUserName(event.target.value)}
+              ref={inputRef}
+              placeholder='Procure por um usuário'
             />
           </fieldset>
           <button type='submit'>Pesquisar</button>
