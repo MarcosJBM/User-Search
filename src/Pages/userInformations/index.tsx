@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { Repository } from "../../Components/Repository";
+import { Repository } from "../../components/Repository";
 
-import { UserProps } from "./types";
-import { RepositoriesProps } from "../../Components/Repository/types";
+import { UserProps, RepoProps } from "../../@types";
 
-import api from "../../Services/api";
+import api from "../../services/api";
 
-import "../../Styles/Pages/UserInformations/styles.css";
+import "../../styles/Pages/UserInformations/styles.css";
 import {
   LinkIcon,
   LocationIcon,
@@ -16,11 +15,10 @@ import {
 } from "@primer/octicons-react";
 
 import { SiTwitter } from "react-icons/si";
-import { Spinner } from "../../Components/Spinner";
 
 const UserInformations = () => {
   const [user, setUser] = useState<UserProps | null>(null);
-  const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
+  const [repositories, setRepositories] = useState<RepoProps[]>([]);
 
   useEffect(() => {
     const userName = localStorage.getItem("userName"); //Pega o nome do usuário

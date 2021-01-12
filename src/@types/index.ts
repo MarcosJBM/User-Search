@@ -12,3 +12,12 @@ export interface UserProps {
   followers: number;
   following: number;
 }
+
+export interface RepoProps {
+  name: string;
+  description: string;
+  language: string;
+  html_url: string;
+  stargazers_count: number;
+  forks_count: number;
+}

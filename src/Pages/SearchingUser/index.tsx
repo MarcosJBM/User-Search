@@ -1,7 +1,7 @@
 import React, { createRef, SyntheticEvent, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import "../../Styles/Pages/SearchingUser/styles.css";
+import "../../styles/Pages/SearchingUser/styles.css";
 
 const SearchingUser = () => {
   const inputRef = createRef<HTMLInputElement>();

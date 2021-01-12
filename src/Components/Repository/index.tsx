@@ -1,12 +1,12 @@
 import React from "react";
 
-import { RepositoriesProps } from "./types";
+import { RepoProps } from "../../@types";
 
-import "../../Styles/Components/Repository/styles.css";
+import "../../styles/Components/Repository/styles.css";
 
 import { GitForkIcon, RepoIcon, StarIcon } from "@primer/octicons-react";
 
-export const Repository = (props: RepositoriesProps) => {
+export const Repository = (props: RepoProps) => {
   const RepositoryHasStars = () => {
     const hasStars =
       props.stargazers_count > 0 ? (
