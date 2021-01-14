@@ -1,7 +1,7 @@
 import React, { createRef, SyntheticEvent, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import "../../styles/Pages/SearchingUser/styles.css";
+import { Container, SearchForm, Button } from "./styles";
 
 const SearchingUser = () => {
   const inputRef = createRef<HTMLInputElement>();
@@ -13,6 +13,10 @@ const SearchingUser = () => {
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
 
+    if (userName == "") {
+      return alert("Informe um nome de usuário");
+    }
+
     localStorage.setItem("userName", userName);
     history.push("/user-informations");
   }
@@ -22,22 +26,18 @@ const SearchingUser = () => {
   });
 
   return (
-    <div id='searching-user-page'>
-      <main>
-        <form onSubmit={handleSubmit}>
-          <fieldset>
-            <input
-              type='text'
-              value={userName}
-              onChange={event => setUserName(event.target.value)}
-              ref={inputRef}
-              placeholder='Procure por um usuário'
-            />
-          </fieldset>
-          <button type='submit'>Pesquisar</button>
-        </form>
-      </main>
-    </div>
+    <Container>
+      <SearchForm onSubmit={handleSubmit}>
+        <input
+          type='text'
+          value={userName}
+          onChange={event => setUserName(event.target.value)}
+          ref={inputRef}
+          placeholder='Procure por um usuário'
+        />
+        <Button type='submit'>Pesquisar</Button>
+      </SearchForm>
+    </Container>
   );
 };
 
