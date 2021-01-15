@@ -22,4 +22,10 @@ export default createGlobalStyle`
   a {
     text-decoration: none
   }
+
+  :root {
+    --javascript: #f1e05a;
+    --typescript: #2b7489;
+    --css: #563d7c;
+  }
 `;
