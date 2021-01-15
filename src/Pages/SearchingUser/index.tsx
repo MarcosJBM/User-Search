@@ -13,7 +13,7 @@ const SearchingUser = () => {
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
 
-    if (userName == "") {
+    if (userName === "") {
       return alert("Informe um nome de usuário");
     }
 

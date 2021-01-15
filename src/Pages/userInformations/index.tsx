@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Repository } from "../../components/Repository";
+import { RepoCard } from "../../components/RepoCard";
 
 import { UserProps, RepoProps } from "../../@types";
 
@@ -116,7 +116,7 @@ const UserInformations = () => {
       </div>
       <div id='user-repositories'>
         {repositories.map(repo => (
-          <Repository
+          <RepoCard
             key={repo.html_url.toString()}
             html_url={repo.html_url}
             name={repo.name}
