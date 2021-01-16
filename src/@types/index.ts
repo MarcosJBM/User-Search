@@ -8,7 +8,6 @@ export interface UserProps {
   location?: string;
   email?: string;
   bio: string;
-  twitter_username?: string;
   followers: number;
   following: number;
 }
