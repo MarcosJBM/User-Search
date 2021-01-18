@@ -1,13 +1,11 @@
 export interface UserProps {
   login: string;
   avatar_url: string;
-  html_url: string;
   name: string;
   company?: string;
   blog?: string;
   location?: string;
   email?: string;
-  bio: string;
   followers: number;
   following: number;
 }
@@ -19,4 +17,10 @@ export interface RepoProps {
   html_url: string;
   stargazers_count?: number;
   forks_count?: number;
+}
+
+export interface Data {
+  user?: UserProps;
+  repos?: RepoProps[];
+  error?: string;
 }
