@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-import {
-  LinkIcon,
-  LocationIcon,
-  OrganizationIcon,
-  PeopleIcon,
-} from "@primer/octicons-react";
-
 export const Container = styled.div`
   --horizontalPadding: 16px;
   --verticalPadding: 24px;
@@ -38,12 +31,14 @@ export const RightSide = styled.div`
   padding: 0 var(--horizontalPadding);
 
   @media (min-width: 768px) {
+    margin-top: 80px;
+
     width: 75%;
   }
 `;
 
 export const Repos = styled.div`
-  margin-top: 86px;
+  margin-top: 30px;
 
   > h2 {
     font-size: 16px;
